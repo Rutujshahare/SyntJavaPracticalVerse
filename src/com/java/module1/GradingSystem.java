@@ -45,10 +45,87 @@ public static void main(String args[]) throws InterruptedException {
 			}
 			totalmarks= totalmarks+marks;
 		}
-		
+		int practical=0;
 		if(totalmarks<200) {
-			int practical=70;
+			practical=70;
 		}
+		else if(totalmarks>=200&&totalmarks<280) {
+		 practical=78;
+		}
+		else if(totalmarks>=280&&totalmarks<340) {
+			 practical=85;
+		}
+		else if(totalmarks>=340&&totalmarks<400) {
+			 practical=90;
+		}
+		else {
+			 practical=100;
+		}
+		int allmarks=totalmarks+practical;
+		double average=(allmarks)/n;
+		
+		System.out.println("the student got the percentage is"+average+"%");
+		System.out.println("-------------------------------------------------------------------------");
+		String choice = null;
+		//grading system of the marks:
+		if(average<45) {
+			System.out.println("the students is fail");
+		}
+		else if(average>=45&&average<55) {
+			System.out.println("the student is in IMPROVEMENT stage");
+			choice="IMPROVEMENT";
+		}
+		else if(average>=55&&average<65) {
+			System.out.println("the student is in GOOD stage");
+			choice="GOOD";
+		}
+		else if(average>=65&&average<75) {
+			System.out.println("the student is in AVERAGE stage");
+			choice="AVERAGE";
+		}
+		else if(average>=75&&average<87) {
+			System.out.println("the student is in EXCELLENT stage");
+			choice="EXCELLENT";
+		}
+		else {
+			System.out.println("the student is in HONOUR");
+			choice="HONOUR";
+		}
+		double prize=0;
+		
+		switch(choice) {
+		
+		case "IMPROVEMENT","GOOD":
+		{
+			System.out.println("No scholarship is found here ");
+		}
+		break;
+		
+		case "AVERAGE":
+		{
+			prize=average*58;
+			System.out.println(" scholarship is found here "+prize);
+		}
+		break;
+		case "EXCELLENT":
+		{
+			prize=average*68;
+			System.out.println(" scholarship is found here "+prize);
+		}
+		break;
+		case "HONOUR":
+		{
+			prize=average*70;
+			System.out.println(" scholarship is found here "+prize);
+		}
+		break;
+		
+		}
+		
+			
+	}
+	else {
+		System.out.println("NO match found");
 	}
 }
 }
